@@ -32,6 +32,10 @@ Edit `config.json`.
 }
 ```
 
+Create an installer for your users.
+```bash
+npm run installer
+```
 
 Run the cape system.
 ```bash
