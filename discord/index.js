@@ -30,7 +30,14 @@ client.on("message", async message => {
   let args = messageArray.slice(1);
   
   if(!cmd.startsWith(config.prefix)) return;
-  
+  if (cmd === config.prefix + 'help') {
+    let list = []
+    fs.readdirSync('./discord/commands').forEach(file => {
+      list.push(config.prefix + file.slice(0, -3));
+    });
+    message.channel.send(list)
+    return;
+  }
   let commandfile = client.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(client,message,args);
 
