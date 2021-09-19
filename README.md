@@ -55,6 +55,16 @@ Change your Item (Linked Users)
 !setitem <itemName>
 ```
 
+List the names of a cosmetic
+```
+!list <cape/item>
+```
+
+View a cape's texture
+```
+!viewcape <cape>
+```
+
 ## Credits + Details
 
 This was originally a private system for [FuckBeingSad](https://fuckbeingsad.club/) (friend group) which I designed. I decided to revamp it and release it on GitHub for the public.
