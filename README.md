@@ -42,29 +42,34 @@ npm run start
 
 This system is integrated with a Discord Bot. Here you can find a list of commands available. "!" is the default prefix but can be changed in the config.
 
-Link a discord user to their Minecraft Account (Owner Only)
+Link a discord user to their Minecraft Account (Owner Only).
 ```
 !link <discord user> <minecraft username>
 ```
 
-Change your Cape (Linked Users)
+Change your Cape (Linked Users).
 ```
 !setcape <capeName>
 ```
 
-Change your Item (Linked Users)
+Change your Item (Linked Users).
 ```
 !setitem <itemName>
 ```
 
-List the names of a cosmetic
+Displays a List of the Cosmetics.
 ```
 !list <cape/item>
 ```
 
-View a cape's texture
+View a Capes Texture.
 ```
 !viewcape <cape>
+```
+
+View a linked players information.
+```
+!info <discord/minecraft username>
 ```
 
 ## Credits and Details
@@ -74,7 +79,7 @@ This was originally a private system for [FuckBeingSad](https://fuckbeingsad.clu
 Please understand that this API is meant for small groups of friends, small servers, etc. This is in no way ready for production as it stores in JSON to keep 
 things simple.
 
-Credit to the [CloaksPlus](https://cloaksplus.com/) for the item models. #stolen
+Stole the item models from CloaksPlus lol.
 
 ## License
 
