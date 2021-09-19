@@ -78,7 +78,7 @@ Credit to the [CloaksPlus](https://cloaksplus.com/) for the item models. #stolen
 
 ## License
 
-Distributed under the GNU General Public License License. See [LICENSE](https://github.com/ItsVops/vops-capes/blob/main/LICENSE) for more information.
+Distributed under the GNU General Public License. See [LICENSE](https://github.com/ItsVops/vops-capes/blob/main/LICENSE) for more information.
 
 ## Contact
 
