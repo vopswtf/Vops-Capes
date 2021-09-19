@@ -1,0 +1,18 @@
+{
+  "name": "vops-capes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "installer": "node createbat.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "express": "^4.17.1",
+    "readline-sync": "^1.4.10",
+    "request": "^2.88.2"
+  },
+  "author": "ItsVops",
+  "license": "ISC",
+  "description": "simple way to host your own optifine proxy"
+}

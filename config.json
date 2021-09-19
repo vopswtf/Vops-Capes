@@ -1,0 +1,6 @@
+{
+    "port": "80",
+    "token": "DISCORD_BOT_TOKEN",
+    "prefix": "!",
+    "ownerIds": ["DISCORD_ID1", "DISCORD_ID2"]
+}
