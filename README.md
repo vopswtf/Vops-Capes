@@ -1,5 +1,7 @@
 # Vops Capes
 
+NOTE: This project has not yet released. If you have any questions, message me on discord.
+
 Vops Capes is a self-hosted cape system for Minecraft that gives you full control of your cosmetics.
 
 This system allows for the users to apply custom capes at no cost, aswell as cosmetics such as hats or backpacks.
@@ -65,7 +67,7 @@ View a cape's texture
 !viewcape <cape>
 ```
 
-## Credits + Details
+## Credits and Details
 
 This was originally a private system for [FuckBeingSad](https://fuckbeingsad.club/) (friend group) which I designed. I decided to revamp it and release it on GitHub for the public.
 
