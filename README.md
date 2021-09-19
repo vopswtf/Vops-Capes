@@ -3,8 +3,8 @@
 Vops Capes is a self-hosted cape system for Minecraft that gives you full control of your cosmetics.
 
 This system allows for the users to apply custom capes at no cost, aswell as cosmetics such as hats or backpacks.
-<img src="https://i.imgur.com/jyCJ8c6.png" data-canonical-src="https://i.imgur.com/jyCJ8c6.png" width="125" height="250" />
-<img src="https://i.imgur.com/GeOBVmq.png" data-canonical-src="https://i.imgur.com/GeOBVmq.png" width="200" height="250" />
+<img src="https://i.imgur.com/jyCJ8c6.png" data-canonical-src="https://i.imgur.com/jyCJ8c6.png" width="125" height="260" />
+<img src="https://i.imgur.com/GeOBVmq.png" data-canonical-src="https://i.imgur.com/GeOBVmq.png" width="200" height="260" />
 
 ## Installation
 
