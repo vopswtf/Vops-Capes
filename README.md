@@ -1,5 +1,3 @@
-NOTE: This project has not yet been released. If you have any questions, message me on discord.
-
 # Vops Capes
 
 Vops Capes is a self-hosted cape system for Minecraft that gives you full control of your cosmetics.
