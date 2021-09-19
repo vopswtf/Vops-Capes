@@ -17,8 +17,15 @@ Install NPM packages.
 npm install
 ```
 
-
-Edit `config.json` to your liking.
+Edit the `config.json`.
+```json
+{
+    "port": "80",
+    "token": "DISCORD_BOT_TOKEN",
+    "prefix": "!",
+    "ownerIds": ["DISCORD_ID1", "DISCORD_ID2"]
+}
+```
 
 
 Run the cape system.
