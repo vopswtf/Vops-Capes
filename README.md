@@ -34,6 +34,25 @@ Run the cape system.
 npm run start
 ```
 
+## Discord Commands
+
+This system is integrated with a Discord Bot. Here you can find a list of commands available. "!" is the default prefix but can be changed in the config.
+
+Link a discord user to their Minecraft Account (Owner Only)
+```
+!link <discord user> <minecraft username>
+```
+
+Change your Cape (Linked Users)
+```
+!setcape <capeName>
+```
+
+Change your Item (Linked Users)
+```
+!setitem <itemName>
+```
+
 ## Credits + Details
 
 This was originally a private system for [FuckBeingSad](https://fuckbeingsad.club/) (friend group) which I designed. I decided to revamp it and release it on GitHub for the public.
