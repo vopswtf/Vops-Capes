@@ -23,23 +23,4 @@ router.get('/:username.cfg', async (req, res) => {
     }
 });
 
-router.get('/set/:username/:item', async (req, res) => {
-    let username = req.params.username;
-    let item = req.params.item;
-    let userList = JSON.parse(fs.readFileSync('./users.json'));
-    if (!fs.existsSync('./assets/items/' + item + '/model.cfg')) return res.json({success: false, error: "that item doesnt exist MORON"})
-    userList[username].items = [item]
-    fs.writeFileSync("./users.json", JSON.stringify(userList, null, 2));
-    res.json({success: true})
-});
-
-router.get('/clear/:username', async (req, res) => {
-    let username = req.params.username;
-    let userList = JSON.parse(fs.readFileSync('./users.json'));
-    if (!userList[username]) return res.json({success: false, error: "user doesnt have a cape to clear"})
-    userList[username] = {cape: null}
-    fs.writeFileSync("./users.json", JSON.stringify(userList, null, 2));
-    res.json({success: true})
-});
-
 module.exports = router;
