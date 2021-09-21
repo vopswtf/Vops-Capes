@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "installer": "node createbat.js"
+    "installer": "node utils/createbat.js"
   },
   "dependencies": {
     "discord.js": "^12.5.3",

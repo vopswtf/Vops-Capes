@@ -13,9 +13,9 @@ var ipAddress = readlineSync.question('What is the IP address of your machine wh
 
 if (!ValidateIPaddress(ipAddress)) return console.log('Invalid IP Address!')
 
-let batTemplate = fs.readFileSync('bat.txt').toString()
+let batTemplate = fs.readFileSync('./utils/bat.txt').toString()
 
 batTemplate = batTemplate.replace(/REPLACE_ME/g, ipAddress);
 
 console.log('Created bat installer! (installer.bat)')
-fs.writeFileSync('Installer.bat', batTemplate)
+fs.writeFileSync('./Installer.bat', batTemplate)
