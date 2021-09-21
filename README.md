@@ -81,8 +81,6 @@ This was originally a private system for [FuckBeingSad](https://fuckbeingsad.clu
 Please understand that this API is meant for small groups of friends, small servers, etc. This is in no way ready for production as it stores in JSON to keep 
 things simple.
 
-Stole the item models from CloaksPlus lol.
-
 ## License
 
 Distributed under the GNU General Public License. See [LICENSE](https://github.com/ItsVops/vops-capes/blob/main/LICENSE) for more information.
