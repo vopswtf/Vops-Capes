@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const config = require('../config.json');
+const fs = require('fs');
 
 app.use('/capes', require('./routes/capes.js'));
 
@@ -10,7 +11,7 @@ app.use('/users', require('./routes/users.js'));
 app.use('/assets', express.static('./api/assets'))
 
 app.use((req, res, next)=>{
-    res.redirect('http://107.182.233.85' + req.originalUrl)
+    res.status(404).send(fs.readFileSync("./api/assets/404.html").toString());
 });
 
 // Start Server
