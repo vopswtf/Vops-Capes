@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     let userData = JSON.parse(fs.readFileSync("./api/users.json"))
     let member = message.mentions.users.first();
     if (!args[0]) return message.channel.send(`${'```'}${config.prefix}info <username or discord>${'```'}`)
-    if (linked[member.id]) {
+    if (member && linked[member.id]) {
       let embed = new Discord.MessageEmbed()
       .setColor('BLUE')
       .setDescription(`**Discord: **${member}\n**Username: **${linked[member.id]}\n**Cape: **${userData[linked[member.id]].cape || "None"}\n**Item: **${userData[linked[member.id]].items[0] || "None"}`)
