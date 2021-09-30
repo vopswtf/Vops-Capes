@@ -47,7 +47,7 @@ This system is integrated with a Discord Bot. Here you can find a list of comman
 ```
 !link <discord user> <minecraft username>
 !setcape <capeName>
-!setcustom <capeFile>
+!setcustom [capeFile]
 !setitem <itemName>
 !list <cape/item>
 !viewcape <cape>
