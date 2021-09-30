@@ -44,33 +44,13 @@ npm run start
 
 This system is integrated with a Discord Bot. Here you can find a list of commands available. "!" is the default prefix but can be changed in the config.
 
-Link a discord user to their Minecraft Account (Owner Only).
 ```
 !link <discord user> <minecraft username>
-```
-
-Change your Cape (Linked Users).
-```
 !setcape <capeName>
-```
-
-Change your Item (Linked Users).
-```
+!setcustom <capeFile>
 !setitem <itemName>
-```
-
-Displays a List of the Cosmetics.
-```
 !list <cape/item>
-```
-
-View a Capes Texture.
-```
 !viewcape <cape>
-```
-
-View a linked players information.
-```
 !info <discord/minecraft username>
 ```
 
