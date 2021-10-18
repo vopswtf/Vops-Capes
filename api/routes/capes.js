@@ -1,14 +1,21 @@
 // Global Variables
 const express = require('express');
 const router = express.Router();
+const config = require('../../config.json');
 const fs = require('fs');
+
+let users;
+if (config.storage.type === 'json') {
+    users = require('../storage/json.js');
+} else if (config.storage.type === 'mysql') {
+    users = require('../storage/mysql.js');
+}
 
 router.get('/:username.png', async (req, res) => {
     let username = req.params.username;
-    let userList = JSON.parse(fs.readFileSync('./api/users.json'));
-    if (!userList[username] || !userList[username].cape) return res.redirect('http://107.182.233.85' + req.originalUrl);
-    if (userList[username].cape === "custom") return res.redirect(`/assets/capes/${username}.png`)
-    res.redirect(`/assets/capes/${userList[username].cape}.png`)
+    users.getCapeUrl(username, capeUrl => {
+        res.redirect(capeUrl);
+    });
 });
 
 

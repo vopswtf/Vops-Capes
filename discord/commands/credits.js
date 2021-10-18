@@ -8,10 +8,11 @@ module.exports.run = async (client, message, args) => {
   .setURL("https://vops.cc/")
   .setColor('BLUE')
   .setDescription("Cape System created by ItsVops on GitHub.\n\nhttps://vops.cc\nhttps://github.com/ItsVops\nhttps://twitter.com/vopswtf")
-  .setThumbnail("https://vops.cc/favicon.ico")
+  .setThumbnail("https://i.imgur.com/mPAj7qS.png")
   message.channel.send(embed)
 }
 
 module.exports.help = {
-  name:"credits"
+  name:"credits",
+  action: "view the credits"
 }

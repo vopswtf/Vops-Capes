@@ -1,6 +1,6 @@
 {
   "name": "vops-capes",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,6 +9,7 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "express": "^4.17.1",
+    "mysql2": "^2.3.2",
     "readline-sync": "^1.4.10",
     "request": "^2.88.2"
   },

@@ -1,24 +1,34 @@
 let fs = require('fs');
 let config = JSON.parse(fs.readFileSync("./config.json"))
+require('../../utils/embed.js')();
+
+let users;
+if (config.storage.type === 'json') {
+    users = require('../../api/storage/json.js');
+} else if (config.storage.type === 'mysql') {
+    users = require('../../api/storage/mysql.js');
+}
+
 
 module.exports.run = async (client, message, args) => {
-    let linked = JSON.parse(fs.readFileSync("./discord/linked.json"))
-    let userData = JSON.parse(fs.readFileSync("./api/users.json"))
-    if (!linked[message.author.id]) return message.channel.send(`I can't seem to find your username. Please ask to be linked.`)
-    if (!args[0]) return message.channel.send(`${'```'}${config.prefix}setitem <hatName>${'```'}`)
-    let username = linked[message.author.id];
-    if (!userData[username]) {
-      userData[username] = {
-        "cape": null,
-        "items": []
+  users.getLink(message.author.id, username => {
+    if (!username) return createEmbed('error', 'You aren\'t linked!', `You don't seem to have a linked minecraft account!\n\nIf this is a mistake, contact one of the cape owners.`, null, message)
+    if (!args[0]) return createEmbed('info', 'Set Item Command', `Command to add or change your player's item` + "\n\n**Usage**\n\n" + "``!setitem <item>``\n\nTo see a list of available items, use ``!list item``", null, message)
+    users.setItem(username, args[0], diditwork => {
+      if (diditwork === true) {
+        if (args[0].toLowerCase() === "none") {
+          createEmbed('success', 'Success', 'Your item has been cleared on your ``'+username+'`` account.', null, message)
+          return;
+        }
+        createEmbed('success', 'Item Equipped', `You have successfully equipped the **${args[0]}** item on your **${username}** account.`, args[0].toLowerCase(), message)
+      } else {
+        createEmbed('error', 'Unknown Item', 'That item is not available or does not exist!\n\nTo see a list of available items use: ``!list item``', null, message)
       }
-    }
-    if (!fs.existsSync(`./api/assets/items/${args[0]}/model.cfg`)) return message.channel.send(`**${args[0]}** doesn't seem to be a valid hat!`)
-    userData[username].items = [args[0]]
-    fs.writeFileSync('./api/users.json', JSON.stringify(userData, null, 2))
-    message.channel.send(`**${username}** now has the **${args[0]}** item.`)
+    })
+  })
 }
 
 module.exports.help = {
-  name:"setitem"
+  name:"setitem",
+  action: "set your item"
 }

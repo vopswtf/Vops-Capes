@@ -1,6 +1,7 @@
 let request = require('request');
 let fs = require('fs');
 let config = JSON.parse(fs.readFileSync("./config.json"))
+require('../../utils/embed.js')()
 
 var download = function(uri, filename, callback){
   request.head(uri, function(err, res, body){
@@ -8,28 +9,30 @@ var download = function(uri, filename, callback){
   });
 };
 
+let users;
+if (config.storage.type === 'json') {
+    users = require('../../api/storage/json.js');
+} else if (config.storage.type === 'mysql') {
+    users = require('../../api/storage/mysql.js');
+}
+
 module.exports.run = async (client, message, args) => {
     let image = message.attachments.entries().next().value;
-    let linked = JSON.parse(fs.readFileSync("./discord/linked.json"))
-    let userData = JSON.parse(fs.readFileSync("./api/users.json"))
-    if (!linked[message.author.id]) return message.channel.send(`I can't seem to find your username. Please ask to be linked.`)
-    if (!image || !image[1]) return message.channel.send(`${'```'}${config.prefix}setcustom [fileUpload]${'```'}`)
-    image = image[1]
-    if (!image.name.endsWith(".png")) return message.channel.send(`Invalid file format! Please use a PNG.`)
-    let username = linked[message.author.id];
-    if (!userData[username]) {
-      userData[username] = {
-        "cape": null,
-        "items": []
-      }
-    }
-    download(image.url, `./api/assets/capes/${username}.png`, () => {
-      userData[username].cape = "custom"
-      fs.writeFileSync('./api/users.json', JSON.stringify(userData, null, 2))
-      message.channel.send(`**${username}** now has their **custom** cape.`, { files: [`./api/assets/capes/${username}.png`] })
+    users.getLink(message.author.id, username => {
+      if (!username) return createEmbed('error', 'You aren\'t linked!', `You don't seem to have a linked minecraft account!\n\nIf this is a mistake, contact one of the cape owners.`, null, message)
+      if (!image || !image[1]) return createEmbed('info', 'Set Custom Command', `Command to add or change your player's custom cape` + "\n\n**Usage**\n\n" +  "``!setcustom [fileUpload]``", null, message)
+      image = image[1]
+      if (!image.name.endsWith(".png")) return createEmbed('error', 'Error', `Invalid file format! Please use a PNG.`, null, message)
+      download(image.url, `./api/assets/capes/${username}.png`, () => {
+        users.setCape(username, 'custom', output => {
+          let embed = createEmbed('success', 'Cape Equipped', `You have successfully equipped the **custom** cape on your **${username}** account.`)
+          message.channel.send({ embed: embed, files: [`./api/assets/capes/${username}.png`] })
+        })
+      })
     })
 }
 
 module.exports.help = {
-  name:"setcustom"
+  name:"setcustom",
+  action: "set a custom cape for yourself"
 }

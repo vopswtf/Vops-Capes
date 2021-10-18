@@ -1,8 +1,11 @@
 {
-  "ItsVops": {
-    "cape": "vops",
-    "items": [
-      "axolotl"
-    ]
+  "users": {
+    "ItsVops": {
+      "cape": "vops",
+      "item": "axolotl"
+    }
+  },
+  "discordLink": {
+    "111973782612156416": "ItsVops"
   }
 }

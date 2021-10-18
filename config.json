@@ -2,5 +2,15 @@
     "port": "80",
     "token": "DISCORD_BOT_TOKEN",
     "prefix": "!",
-    "ownerIds": ["DISCORD_ID1", "DISCORD_ID2"]
+    "ownerIds": ["DISCORD_ID1", "DISCORD_ID2"],
+    "storage": {
+        "type": "json",
+        "mysql": {
+            "host": "",
+            "user": "",
+            "password": "",
+            "database": ""
+        },
+        "mysql_anti_idle": true
+    }
 }
