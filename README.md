@@ -65,17 +65,7 @@ npm run start
 
 ## Discord Commands
 
-This system is integrated with a Discord bot. Here you can find a list of commands available. "!" is the default prefix but can be changed in the config.
-
-```
-!link <discord user> <minecraft username>
-!setcape <capeName>
-!setcustom [capeFile]
-!setitem <itemName>
-!list <cape/item>
-!viewcape <cape>
-!info <discord/minecraft username>
-```
+This system is integrated with a Discord bot. Use the command `!help` for a list of available commands. "!" is the default prefix but can be changed in the config.
 
 ## Credits and Details
 
