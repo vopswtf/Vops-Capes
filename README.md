@@ -1,16 +1,23 @@
 # Vops Capes
 
+<p>
+   <a href="https://discord.gg/6Xmk3HHR5v">
+   <img src="https://img.shields.io/discord/893202408501551204?color=blue&label=support%20discord"
+      alt="support"></a>
+<p>
+
 Vops Capes is a self-hosted cape system for Minecraft that gives you full control of your cosmetics.
-
-
-https://discord.gg/6Xmk3HHR5v
-
-please join the support discord if you need help im getting too many friend requests
-
 
 This system allows for the users to apply custom capes at no cost, aswell as cosmetics such as hats or backpacks.
 <img src="https://i.imgur.com/jyCJ8c6.png" data-canonical-src="https://i.imgur.com/jyCJ8c6.png" width="125" height="260" />
 <img src="https://i.imgur.com/GeOBVmq.png" data-canonical-src="https://i.imgur.com/GeOBVmq.png" width="200" height="260" />
+
+## Latest Update: 1.2.0
+- Added MySQL support for storage
+- Added embeds to most (if not all) messages
+- Might be bugs, report in discord
+<img src="https://i.imgur.com/muWhCzZ.png" data-canonical-src="https://i.imgur.com/muWhCzZ.png" width="450" />
+<img src="https://i.imgur.com/gS10yQ3.png" data-canonical-src="https://i.imgur.com/gS10yQ3.png" width="450" />
 
 ## Installation
 
@@ -26,13 +33,23 @@ Install NPM packages.
 npm install
 ```
 
-Edit `config.json`.
+Edit `config.json`. (type can be "json" or "mysql")
 ```json
 {
     "port": "80",
     "token": "DISCORD_BOT_TOKEN",
     "prefix": "!",
-    "ownerIds": ["DISCORD_ID1", "DISCORD_ID2"]
+    "ownerIds": ["DISCORD_ID1", "DISCORD_ID2"],
+    "storage": {
+        "type": "json",
+        "mysql": {
+            "host": "",
+            "user": "",
+            "password": "",
+            "database": ""
+        },
+        "mysql_anti_idle": true
+    }
 }
 ```
 
@@ -48,7 +65,7 @@ npm run start
 
 ## Discord Commands
 
-This system is integrated with a Discord Bot. Here you can find a list of commands available. "!" is the default prefix but can be changed in the config.
+This system is integrated with a Discord bot. Here you can find a list of commands available. "!" is the default prefix but can be changed in the config.
 
 ```
 !link <discord user> <minecraft username>
@@ -64,8 +81,7 @@ This system is integrated with a Discord Bot. Here you can find a list of comman
 
 This was originally a private system for [FuckBeingSad](https://fuckbeingsad.club/) (friend group) which I designed. I decided to revamp it and release it on GitHub for the public.
 
-Please understand that this API is meant for small groups of friends, small servers, etc. This is in no way ready for production as it stores in JSON to keep 
-things simple.
+Please understand that this API was created for small groups of friends, small servers, etc.
 
 ## License
 
