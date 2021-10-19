@@ -79,6 +79,8 @@ Distributed under the GNU General Public License. See [LICENSE](https://github.c
 
 ## Contact
 
+support discord - [discord.gg/6Xmk3HHR5v](https://discord.gg/6Xmk3HHR5v)
+   
 website - [vops.cc](https://vops.cc)
 
 twitter - [@vopswtf](https://twitter.com/vopswtf)
