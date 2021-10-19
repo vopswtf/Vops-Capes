@@ -71,7 +71,7 @@ This system is integrated with a Discord bot. Use the command `!help` for a list
 
 This was originally a private system for [FuckBeingSad](https://fuckbeingsad.club/) (friend group) which I designed. I decided to revamp it and release it on GitHub for the public.
 
-Please understand that this API was created for small groups of friends, small servers, etc.
+If you require support, please do not add me on discord. Instead, join the [support discord](https://discord.gg/6Xmk3HHR5v)!
 
 ## License
 
