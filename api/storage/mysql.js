@@ -44,7 +44,7 @@ function getUser(username, cb) {
   connection.query('SELECT * from users WHERE `username` = ?', [username], 
   function(err, results, fields) {
     if (results && results[0]) return cb(results[0])
-    cb(null)
+    cb({cape: "None", item: "None"})
   });
 }
 

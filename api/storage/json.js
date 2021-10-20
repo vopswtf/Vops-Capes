@@ -2,7 +2,7 @@ const fs = require('fs')
 
 function getUser(username, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
-    if (!userData.users[username]) return cb(null);
+    if (!userData.users[username]) return cb({cape: "None", item: "None"});
     userData.users[username].username = username
     cb(userData.users[username]);
 }
