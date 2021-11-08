@@ -18,7 +18,7 @@ function getCape(username, cb) {
 function getCapeUrl(username, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
     if (!userData.users[username] || !userData.users[username].cape) cb(`http://107.182.233.85/capes/${username}`);
-    if (userData.users[username].cape === "custom") cb(`/assets/capes/${username}.png`);
+    if (userData.users[username] && userData.users[username].cape === "custom") cb(`/assets/capes/${username}.png`);
     return cb(`/assets/capes/${userData.users[username].cape}.png`);
 }
 
