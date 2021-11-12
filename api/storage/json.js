@@ -4,7 +4,7 @@ function getUser(username, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
     if (!userData.users[username]) return cb({cape: "None", item: "None"});
     userData.users[username].username = username
-    cb(userData.users[username]);
+    return cb(userData.users[username]);
 }
 
 // get
@@ -17,8 +17,8 @@ function getCape(username, cb) {
 
 function getCapeUrl(username, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
-    if (!userData.users[username] || !userData.users[username].cape) cb(`http://107.182.233.85/capes/${username}`);
-    if (userData.users[username] && userData.users[username].cape === "custom") cb(`/assets/capes/${username}.png`);
+    if (!userData.users[username] || !userData.users[username].cape) return cb(`http://107.182.233.85/capes/${username}`);
+    if (userData.users[username] && userData.users[username].cape === "custom") return cb(`/assets/capes/${username}.png`);
     return cb(`/assets/capes/${userData.users[username]?.cape || "what"}.png`);
 }
 
@@ -31,7 +31,7 @@ function getItem(username, cb) {
 function getUserCfg(username, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
     let obj = {items:[]}
-    if (!userData.users[username] || !userData.users[username].item) cb(obj);
+    if (!userData.users[username] || !userData.users[username].item) return cb(obj);
     obj.items = {
         "type": "custom",
         "model": "assets/items/"+userData.users[username]?.item+"/model.cfg",
@@ -43,7 +43,7 @@ function getUserCfg(username, cb) {
 
 function getLink(id, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
-    cb(userData.discordLink[id]);
+    return cb(userData.discordLink[id]);
 }
 
 function getLinkFromUser(username, cb) {
@@ -54,7 +54,7 @@ function getLinkFromUser(username, cb) {
         discordId = key;
       }
     }
-    cb(discordId);
+    return cb(discordId);
 }
 
 // set
@@ -70,7 +70,7 @@ function setCape(username, cape, cb) {
     if (!fs.existsSync(`./api/assets/capes/${cape}.png`)) return cb(false);
     userData.users[username].cape = cape
     fs.writeFileSync('./api/users.json', JSON.stringify(userData, null, 2))
-    cb(true)
+    return cb(true)
 }
 
 function setItem(username, item, cb) {
