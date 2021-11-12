@@ -25,7 +25,7 @@ function getCapeUrl(username, cb) {
 function getItem(username, cb) {
     let userData = JSON.parse(fs.readFileSync('./api/users.json'));
     if (!userData.users[username] || !userData.users[username].item) return cb(`None`);
-    return cb(userData.users[username].item);
+    return cb(userData.users[username]?.item);
 }
 
 function getUserCfg(username, cb) {
@@ -34,8 +34,8 @@ function getUserCfg(username, cb) {
     if (!userData.users[username] || !userData.users[username].item) cb(obj);
     obj.items = {
         "type": "custom",
-        "model": "assets/items/"+userData.users[username].item+"/model.cfg",
-        "texture": "assets/items/"+userData.users[username].item+"/texture.png",
+        "model": "assets/items/"+userData.users[username]?.item+"/model.cfg",
+        "texture": "assets/items/"+userData.users[username]?.item+"/texture.png",
         "active": "true"
     }
     cb(obj);
