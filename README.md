@@ -73,6 +73,8 @@ This was originally a private system for [FuckBeingSad](https://fuckbeingsad.clu
 
 If you require support, please do not add me on discord. Instead, join the [support discord](https://discord.gg/6Xmk3HHR5v)!
 
+Vops Capes and anything affiliated with Vops Capes is meant for educational purposes only.
+   
 ## License
 
 Distributed under the GNU General Public License. See [LICENSE](https://github.com/ItsVops/vops-capes/blob/main/LICENSE) for more information.
