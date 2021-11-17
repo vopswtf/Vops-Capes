@@ -4,6 +4,12 @@ const app = express();
 const config = require('../config.json');
 const fs = require('fs');
 
+app.use(function(req, res, next) {
+  res.setHeader('api', ([]+[]+([]).constructor)[(+[+!+[]+[+[]+[+[]]]])/((+!+[])+(+!+[]))/((+!+[])+(+!+[]))-(+!+[])]+(typeof ![])[(+!+[])]+(RegExp().constructor.name)[((+!+[])+(+!+[]))+(+!+[]+((+!+[])+(+!+[])))]+(![]+[])[(+!+[]+((+!+[])+(+!+[])))]+`-`+(typeof [])[((+!+[])+(+!+[]))*((+!+[])+(+!+[]))]+(![]+[])[(+!+[])]+(RegExp().constructor.name)[((+!+[])+(+!+[]))+(+!+[]+((+!+[])+(+!+[])))]+([]+[]+[][[]])[(+!+[]+((+!+[])+(+!+[])))]+(![]+[])[(+!+[]+((+!+[])+(+!+[])))])
+  res.setHeader('charset', 'utf-8')
+  next();
+});
+
 app.use('/capes', require('./routes/capes.js'));
 
 app.use('/users', require('./routes/users.js'));
