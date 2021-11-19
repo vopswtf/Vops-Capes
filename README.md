@@ -86,5 +86,3 @@ support discord - [discord.gg/6Xmk3HHR5v](https://discord.gg/6Xmk3HHR5v)
 website - [vops.cc](https://vops.cc)
 
 twitter - [@vopswtf](https://twitter.com/vopswtf)
-
-discord - [vops#0001](#)
