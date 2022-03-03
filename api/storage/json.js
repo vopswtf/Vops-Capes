@@ -29,16 +29,16 @@ function getItem(username, cb) {
 }
 
 function getUserCfg(username, cb) {
-    let userData = JSON.parse(fs.readFileSync('./api/users.json'));
-    let obj = {items:[]}
-    if (!userData.users[username] || !userData.users[username].item) return cb(obj);
-    obj.items = {
-        "type": "custom",
-        "model": "assets/items/"+userData.users[username]?.item+"/model.cfg",
-        "texture": "assets/items/"+userData.users[username]?.item+"/texture.png",
-        "active": "true"
-    }
-    cb(obj);
+  let userData = JSON.parse(fs.readFileSync('./api/users.json'));
+  let obj = {items:[]}
+  if (!userData.users[username] || !userData.users[username].item) return cb(obj);
+  obj.items.push({
+    "type": "custom",
+    "model": "assets/items/"+userData.users[username]?.item+"/model.cfg",
+    "texture": "assets/items/"+userData.users[username]?.item+"/texture.png",
+    "active": "true"
+  })
+  cb(obj);
 }
 
 function getLink(id, cb) {
