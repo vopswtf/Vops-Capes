@@ -12,5 +12,11 @@
             "database": ""
         },
         "mysql_anti_idle": true
+    },
+    "server": {
+        "active": true,
+        "port": 25565,
+        "motd": "§9Vops Capes §7» §bLink your Account",
+        "version": "1.8.8"
     }
 }
