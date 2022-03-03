@@ -12,12 +12,9 @@ This system allows for the users to apply custom capes at no cost, aswell as cos
 <img src="https://i.imgur.com/jyCJ8c6.png" data-canonical-src="https://i.imgur.com/jyCJ8c6.png" width="125" height="260" />
 <img src="https://i.imgur.com/GeOBVmq.png" data-canonical-src="https://i.imgur.com/GeOBVmq.png" width="200" height="260" />
 
-## Latest Update: 1.2.0
-- Added MySQL support for storage
-- Added embeds to most (if not all) messages
-- Might be bugs, report in discord
-<img src="https://i.imgur.com/muWhCzZ.png" data-canonical-src="https://i.imgur.com/muWhCzZ.png" width="450" />
-<img src="https://i.imgur.com/gS10yQ3.png" data-canonical-src="https://i.imgur.com/gS10yQ3.png" width="450" />
+## Latest Update: 1.3.0
+- Added linking server.
+- Added verify command to manual link with the server.
 
 ## Installation
 
