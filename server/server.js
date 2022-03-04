@@ -37,11 +37,6 @@ server.on('login', function (client) {
     client.end(`§9Use §b${config.prefix}verify ${code}§9 to link your account.`)
 });
 
-setInterval(() => {
-    currentCodes = {};
-    cache = [];
-}, 5 * 60 * 1000) // 5 minutes
-
 console.log("Linking Server is online.")
 
 
