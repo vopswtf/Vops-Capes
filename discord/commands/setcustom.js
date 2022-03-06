@@ -23,10 +23,10 @@ module.exports.run = async (client, message, args) => {
       if (!image || !image[1]) return createEmbed('info', 'Set Custom Command', `Command to add or change your player's custom cape` + "\n\n**Usage**\n\n" +  "``!setcustom [fileUpload]``", null, message)
       image = image[1]
       if (!image.name.endsWith(".png")) return createEmbed('error', 'Error', `Invalid file format! Please use a PNG.`, null, message)
-      download(image.url, `./api/assets/capes/${username}.png`, () => {
+      download(image.url, `./api/assets/custom/${username}.png`, () => {
         users.setCape(username, 'custom', output => {
           let embed = createEmbed('success', 'Cape Equipped', `You have successfully equipped the **custom** cape on your **${username}** account.`)
-          message.channel.send({ embed: embed, files: [`./api/assets/capes/${username}.png`] })
+          message.channel.send({ embed: embed, files: [`./api/assets/custom/${username}.png`] })
         })
       })
     })

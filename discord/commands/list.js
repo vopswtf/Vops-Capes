@@ -15,8 +15,14 @@ module.exports.run = async (client, message, args) => {
         list.push(`+ ${item}`)
       })
       createEmbed('info', 'Item List', `To preview an item, use this command:\n`+"``!viewitem <item>``" + '\n```diff\n' + list.join('\n') + '```', null, message)
+    } else if (type === "custom") { 
+      let list = [];
+      fs.readdirSync('./api/assets/custom').forEach(cape => {
+        list.push(`+ ` + cape.slice(0, -4))
+      })
+      createEmbed('info', 'Custom Cape List', `To preview a cape, use this command:\n`+"``!viewcustom <cape>``" + '\n```diff\n' + list.join('\n') + '```', null, message)
     } else {
-      createEmbed('info', 'List Command', `Command to list available cosmetics` + "\n\n**Usage**\n\n" +  "``!list <cape/item>``", null, message)
+      createEmbed('info', 'List Command', `Command to list available cosmetics` + "\n\n**Usage**\n\n" +  "``!list <cape/item/custom>``", null, message)
     }
 }
 

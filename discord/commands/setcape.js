@@ -13,7 +13,7 @@ if (config.storage.type === 'json') {
 module.exports.run = async (client, message, args) => {
     users.getLink(message.author.id, username => {
       if (!username) return createEmbed('error', 'You aren\'t linked!', `You don't seem to have a linked minecraft account!\n\nIf this is a mistake, contact one of the cape owners.`, null, message)
-      if (!args[0]) return createEmbed('info', 'Set Cape Command', `Command to add or change your player's cape` + "\n\n**Usage**\n\n" +  "``!setcape <cape>``\n\nTo see a list of available capes, use ``!list cape``", null, message)
+      if (!args[0]) return createEmbed('info', 'Set Cape Command', `Command to add or change your player's cape` + "\n\n**Usage**\n\n" +  "``!setcape <cape/none>``\n\nTo see a list of available capes, use ``!list cape``", null, message)
       users.setCape(username, args[0], diditwork => {
         if (diditwork === true) {
           if (args[0].toLowerCase() === "none") {
