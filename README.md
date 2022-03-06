@@ -12,10 +12,6 @@ This system allows for the users to apply custom capes at no cost, aswell as cos
 <img src="https://i.imgur.com/jyCJ8c6.png" data-canonical-src="https://i.imgur.com/jyCJ8c6.png" width="125" height="260" />
 <img src="https://i.imgur.com/GeOBVmq.png" data-canonical-src="https://i.imgur.com/GeOBVmq.png" width="200" height="260" />
 
-## Latest Update: 1.3.0
-- Added linking server.
-- Added verify command to manual link with the server.
-
 ## Installation
 
 Install [Node.js](https://nodejs.org/en/)
