@@ -26,7 +26,7 @@ server.on('login', function (client) {
     if (cache.includes(profile.name)) {
         for (var key in currentCodes) {
             if (currentCodes[key] === profile.name) {
-                return client.end(`§9Use §b${config.prefix}verify ${key}§9 to link your account.`)
+                return client.end(`§9Use §b${config.discord.prefix}verify ${key}§9 to link your account.`)
             }
         }
     }
@@ -34,7 +34,7 @@ server.on('login', function (client) {
     if (currentCodes[code] && currentCodes[code] !== profile.name) return client.end("§cthis is basically an easter egg lol. reconnect for your actual code.")
     currentCodes[code] = profile.name
     cache.push(profile.name)
-    client.end(`§9Use §b${config.prefix}verify ${code}§9 to link your account.`)
+    client.end(`§9Use §b${config.discord.prefix}verify ${code}§9 to link your account.`)
 });
 
 console.log("Linking Server is online.")

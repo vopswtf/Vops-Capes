@@ -1,0 +1,21 @@
+Redirecting...
+<script>
+    setTimeout(async function () {
+        try {
+            let discordAuth = JSON.parse(localStorage.getItem("discord_oauth"))
+            let { access_token, token_type } = discordAuth;
+            const data = await (await fetch('/api/auth/me', {
+                headers: {
+                    'Authorization': discordAuth.token_type + " " + discordAuth.access_token,
+                }
+            })).json();
+            if (data.code || !data.id) {
+                window.location.href = "/panel/login"
+            } else {
+                window.location.href = "/panel/users"
+            }
+        } catch(err) {
+            window.location.href = "/panel/login"
+        }
+    })
+</script>

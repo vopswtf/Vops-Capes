@@ -11,7 +11,7 @@ if (config.storage.type === 'json') {
 
 
 module.exports.run = async (client, message, args) => {
-  if (!config.ownerIds.includes(message.author.id)) return createEmbed('warning', 'No Permission!', `You don't have permission to use this command!`, null, message)
+  if (!config.discord.ownerIds.includes(message.author.id)) return createEmbed('warning', 'No Permission!', `You don't have permission to use this command!`, null, message)
   if (!args[0] || !args[1]) return createEmbed('info', 'Remove Command', `Command remove a player's cape or item.` + "\n\n**Usage**\n\n" + "``!remove <username> <cape/item>``", null, message)
   users.getUser(args[0], (userInfo) => {
     if (args[1] === "cape") {

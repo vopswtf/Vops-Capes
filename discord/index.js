@@ -12,7 +12,7 @@ fs.readdir("./discord/commands", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
     client.commands.set(props.help.name, props);
-    helpContent += 'Use ``'+ config.prefix + props.help.name + "`` to " + props.help.action + "!\n"
+    helpContent += 'Use ``'+ config.discord.prefix + props.help.name + "`` to " + props.help.action + "!\n"
   });
 });
 
@@ -25,12 +25,12 @@ client.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
-  let prefix = config.prefix;
+  let prefix = config.discord.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
-  if(!cmd.startsWith(config.prefix)) return;
-  if(cmd.toLowerCase() === config.prefix + "help") {
+  if(!cmd.startsWith(prefix)) return;
+  if(cmd.toLowerCase() === prefix + "help") {
     createEmbed('info', 'Vops Capes Help', helpContent, null, message)
   }
   let commandfile = client.commands.get(cmd.slice(prefix.length));
@@ -38,4 +38,12 @@ client.on("message", async message => {
 
 });
 
-client.login(config.token);
+client.login(config.discord.token);
+
+function fetchUserById(id) {
+  return client.users.cache.find(user => user.id === id)
+}
+
+module.exports = {
+  fetchUserById
+}

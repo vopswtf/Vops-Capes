@@ -3,7 +3,6 @@ const fs = require('fs');
 const config = require('../../config.json');
 
 var connection;
-handleDisconnect();
 function handleDisconnect() { // credits: https://stackoverflow.com/questions/20210522/nodejs-mysql-error-connection-lost-the-server-closed-the-connection
   connection = mysql.createConnection(config.storage.mysql); // Recreate the connection, since
                                                   // the old one cannot be reused.
@@ -13,7 +12,7 @@ function handleDisconnect() { // credits: https://stackoverflow.com/questions/20
       console.log('Error when connecting to DB:', err);
       setTimeout(handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
     }                                     // to avoid a hot loop, and to allow our node script to
-    console.log(`[SQL] Connected to MySQL Database!`)
+    console.log(`[SQL] Connected to MySQL Database`)
   });                                     // process asynchronous requests in the meantime.
                                           // If you're also serving http, display a 503 error.
   connection.on('error', function(err) {
@@ -25,6 +24,7 @@ function handleDisconnect() { // credits: https://stackoverflow.com/questions/20
     }
   });
 }
+handleDisconnect();
 
 connection.query('CREATE TABLE IF NOT EXISTS users (username varchar(255), cape varchar(255), item varchar(255), CONSTRAINT thatthang UNIQUE (username))',
   function(err, results, fields) {
@@ -39,6 +39,24 @@ connection.query('CREATE TABLE IF NOT EXISTS discord (id varchar(255), username 
       console.log(`[SQL] Link Database Active`)
     }
   });
+
+
+function getAllUsers(cb) {
+  connection.query('SELECT * from users', 
+  function(err, results, fields) {
+    if (results) return cb(results)
+    return cb(null);
+  });
+}
+
+function getUsersFromPage(page, cb) {
+  if (page <= 0) return cb([])
+  connection.query('SELECT * from users limit ?, ?', [(page * 10) - 10, (page * 10)], 
+  function(err, results, fields) {
+    if (results) return cb(results)
+    return cb(null);
+  });
+}
 
 function getUser(username, cb) {
   connection.query('SELECT * from users WHERE `username` = ?', [username], 
@@ -154,14 +172,17 @@ if (config.storage.mysql_anti_idle === true) {
 }
 
 
+
 module.exports = {
+  getAllUsers,
+  getUsersFromPage,
   getUser: getUser,
   getCape: getCape,
   getCapeUrl: getCapeUrl,
   getItem: getItem,
   getUserCfg: getUserCfg,
   getLink: getLink,
-  getLinkFromUser: getLinkFromUser,
+  getLinkFromUser,
   setCape: setCape,
   setItem: setItem,
   setLink: setLink,
