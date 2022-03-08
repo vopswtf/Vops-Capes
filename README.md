@@ -30,9 +30,6 @@ Edit `config.json`. (type can be "json" or "mysql")
 ```json
 {
     "port": "80",
-    "token": "DISCORD_BOT_TOKEN",
-    "prefix": "!",
-    "ownerIds": ["DISCORD_ID1", "DISCORD_ID2"],
     "storage": {
         "type": "json",
         "mysql": {
@@ -42,8 +39,32 @@ Edit `config.json`. (type can be "json" or "mysql")
             "database": ""
         },
         "mysql_anti_idle": true
+    },
+    "discord": {
+        "active": true,
+        "token": "",
+        "prefix": "!",
+        "ownerIds": ["OWNERID1", "OWNERID2"]
+    },
+    "server": {
+        "active": true,
+        "port": 25565,
+        "motd": "§9Vops Capes §7» §bLink your Account",
+        "version": "1.8.8"
+    },
+    "panel": {
+        "active": false,
+        "allowedInPanel": ["DISCORD_ID", "PUT_MORE_IDS"],
+        "client_id": "",
+        "client_secret": ""
     }
 }
+```
+
+If you are using the panel, add these to your bot oauth redirect urls
+```bash
+http://{ip of vps}/api/auth/callback
+http://s.optifine.net/api/auth/callback
 ```
 
 Create an installer for your users.
