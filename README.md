@@ -88,6 +88,8 @@ This was originally a private system for [FuckBeingSad](https://fuckbeingsad.clu
 If you require support, please do not add me on discord. Instead, join the [support discord](https://discord.gg/6Xmk3HHR5v)!
 
 Vops Capes and anything affiliated with Vops Capes is meant for educational purposes only.
+
+Credit to [Creative-Tim.com](https://www.creative-tim.com/product/material-dashboard) for Panel Design
    
 ## License
 
