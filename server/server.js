@@ -11,6 +11,8 @@ if (config.storage.type === 'json') {
     users = require('../api/storage/mysql.js');
 } 
 
+// this is a codespaces test
+
 var server = mc.createServer({
     'online-mode': true,
     encryption: true,
