@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
   .setTitle("Credits")
   .setURL("https://vops.cc/")
   .setColor('BLUE')
-  .setDescription("Cape System created by ItsVops on GitHub.\n\nhttps://vops.cc\nhttps://github.com/ItsVops\nhttps://twitter.com/vopswtf")
+  .setDescription("Cape System created by vopswtf.\n\nhttps://vops.cc\nhttps://github.com/vopswtf\nhttps://twitter.com/vopswtf")
   .setThumbnail("https://i.imgur.com/mPAj7qS.png")
   message.channel.send(embed)
 }
