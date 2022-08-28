@@ -7,7 +7,7 @@ let installedVer = package.version;
 // check for version update
 let latestData = fetch('https://raw.githubusercontent.com/vopswtf/Vops-Capes/main/package.json').json();
 if (installedVer !== latestData.version) {
-    console.log("WARNING!\nWARNING! --- THIS IS AN OLD VERSION OF VOPS CAPES AND MAY BE MISSING CORE FEATURES\nWARNING! --- UPDATE HERE: https://github.com/ItsVops/Vops-Capes\nWARNING!");
+    console.log("WARNING!\nWARNING! --- THIS IS AN OLD VERSION OF VOPS CAPES AND MAY BE MISSING CORE FEATURES\nWARNING! --- UPDATE HERE: https://github.com/vopswtf/Vops-Capes\nWARNING!");
 }
 
 // check for item updates
