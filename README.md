@@ -18,7 +18,7 @@ Install [Node.js](https://nodejs.org/en/)
 
 Clone the repository.
 ```bash
-git clone https://github.com/ItsVops/vops-capes.git
+git clone https://github.com/vopswtf/vops-capes.git
 ```
 
 Install NPM packages.
@@ -93,7 +93,7 @@ Credit to [Creative-Tim.com](https://www.creative-tim.com/product/material-dashb
    
 ## License
 
-Distributed under the GNU General Public License. See [LICENSE](https://github.com/ItsVops/vops-capes/blob/main/LICENSE) for more information.
+Distributed under the GNU General Public License. See [LICENSE](https://github.com/vopswtf/vops-capes/blob/main/LICENSE) for more information.
 
 ## Contact
 
