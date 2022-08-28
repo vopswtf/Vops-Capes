@@ -15,7 +15,7 @@
     "request": "^2.88.2",
     "sync-fetch": "^0.3.1"
   },
-  "author": "ItsVops",
+  "author": "vopswtf",
   "license": "ISC",
   "description": "simple way to host your own optifine proxy"
 }
