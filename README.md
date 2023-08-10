@@ -5,6 +5,7 @@
    <img src="https://img.shields.io/discord/893202408501551204?color=blue&label=support%20discord"
       alt="support"></a>
 <p>
+this project will probably be getting a recode sometime, idk when tho
 
 Vops Capes is a self-hosted cape system for Minecraft that gives you full control of your cosmetics.
 
