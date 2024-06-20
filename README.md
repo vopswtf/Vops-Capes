@@ -1,4 +1,5 @@
 # Vops Capes
+deprecated - old and bad code - v2 maybe if enough people ask
 
 <p>
    <a href="https://discord.gg/6Xmk3HHR5v">
