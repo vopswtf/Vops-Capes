@@ -85,8 +85,6 @@ This system is integrated with a Discord bot. Use the command `!help` for a list
 
 ## Credits and Details
 
-This was originally a private system for [FuckBeingSad](https://fuckbeingsad.club/) (friend group) which I designed. I decided to revamp it and release it on GitHub for the public.
-
 If you require support, please do not add me on discord. Instead, join the [support discord](https://discord.gg/6Xmk3HHR5v)!
 
 Vops Capes and anything affiliated with Vops Capes is meant for educational purposes only.
