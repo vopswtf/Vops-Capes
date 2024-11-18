@@ -1,2 +1,4 @@
 node_modules/
 *.exe
+util.js
+itemsList.json
